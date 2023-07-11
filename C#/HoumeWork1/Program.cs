@@ -33,7 +33,7 @@ bool invalidNumber(int number)
     }
     return false;
 }  
-int randNumber= new Random().Next(0,100);
+int randNumber= new Random().Next(0,1000000);
 if (invalidNumber(randNumber))
 {
     Console.WriteLine("Введено некорректное число");
@@ -42,7 +42,7 @@ if (invalidNumber(randNumber))
     int newNumber = cutThirdDigit(randNumber);
 
         
-Console.WriteLine($"New version of {randNumber} is {newNumber}");
+Console.WriteLine($"Введенное число {randNumber} и третья цифра {newNumber}");
 
 
 
