@@ -25,19 +25,17 @@ int cutThirdDigit(int number)
         int result = number % 10;
         return result;
 }
-bool invalidNumber(int number)
-{
-    if (number <100)   
+
+// int randNumber= new Random().Next(0,1000000);
+Console.WriteLine("Введите число не меньше трех знаков: ");
+int randNumber = Convert.ToInt32(Console.ReadLine());
+ while (randNumber <100)   
     {
     Console.WriteLine("Введено некорректное число");
+    Console.WriteLine("Введите корректное число: ");
+    randNumber = Convert.ToInt32(Console.ReadLine());
     }
-    return false;
-}  
-int randNumber= new Random().Next(0,1000000);
-if (invalidNumber(randNumber))
-{
-    Console.WriteLine("Введено некорректное число");
-}
+
 
     int newNumber = cutThirdDigit(randNumber);
 
