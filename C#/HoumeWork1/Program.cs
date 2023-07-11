@@ -1,8 +1,8 @@
 ﻿// Task 1. Напишите программу, которая принимает на вход 
 // трёхзначное число и на выходе показывает вторую цифру этого числа.
 
-/*
-int CutNumber(int number)
+
+/*int CutNumber(int number)
 {
     int dozens = number / 10;
     int unit = dozens %10;
@@ -16,22 +16,37 @@ Console.WriteLine($"New version of {randNumber} is {newNumber}");
 
 // Task 2. Напишите программу, которая выводит третью цифру заданного числа
 
-int thirdDigit(int number)
+int cutThirdDigit(int number)
 {
-    int newNumber = number % 100;
-    int result = newNumber;
-    return result; 
+    while (number >= 1000)
+    {
+        number = number / 10;
+    }
+        int result = number % 10;
+        return result;
 }
-Console.Write("Input number: ");
-int number = Convert.ToInt32(Console.ReadLine());
-if (number < 100) Console.WriteLine(number + "-" + "Некорректное число");
-while (number >= 1000) 
+bool invalidNumber(int number)
 {
-      newNumber = number / 10;
-    else newNumber = newThirdDigit(hirdDigit);
+    if (number <100)   
+    {
+    Console.WriteLine("Введено некорректное число");
+    }
+    return false;
+}  
+int randNumber= new Random().Next(0,100);
+if (invalidNumber(randNumber))
+{
+    Console.WriteLine("Введено некорректное число");
 }
+
+    int newNumber = cutThirdDigit(randNumber);
+
+        
+Console.WriteLine($"New version of {randNumber} is {newNumber}");
+
 
 
 // Task 3. Напишите программу, которая принимает на вход цифру, 
 // обозначающую день недели, и проверяет, является ли этот день выходным.
+
 
