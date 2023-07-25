@@ -58,7 +58,7 @@ class Program
 
         double[,] array = new double[rows, columns];
 
-        Console.WriteLine("Введите значения для каждой ячейки массива:");
+        // Console.WriteLine("Введите значения для каждой ячейки массива:");
 
         for (int i = 0; i < rows; i++)
         {
