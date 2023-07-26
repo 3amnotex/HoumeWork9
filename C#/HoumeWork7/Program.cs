@@ -1,6 +1,6 @@
 ﻿// Task 1. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
-/*
+
 double[,] CreateDoubleArray (int rows, int columns)
 {
    double[,] array = new double[rows, columns];
@@ -40,13 +40,13 @@ int columns = Convert.ToInt32 (Console.ReadLine());
 
 double[,] myArray = CreateDoubleArray(rows, columns);
 PrintArray(myArray);
-*/
+
 
 // Task 2. Напишите программу, которая на вход принимает 
 // позиции элемента в двумерном массиве, и возвращает
 // значение этого элемента или же указание, что такого элемента нет
 
-/*
+
 int[,]  CreateMyArray(int rows, int columns, int minValue, int maxValue)
 {
    int[,] array = new int[rows, columns];
@@ -110,9 +110,9 @@ int[,] myArray = CreateMyArray  (rows, columns, minValue, maxValue);
 PrintArray(myArray);
 
 PrintElementIndex(myArray);
-*/
 
-// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+// Task 3. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
 int[,]  CreateNewMyArray(int rows, int columns, int minValue, int maxValue)
 {
