@@ -42,10 +42,11 @@ double[,] myArray = CreateDoubleArray(rows, columns);
 PrintArray(myArray);
 */
 
-// Напишите программу, которая на вход принимает 
+// Task 2. Напишите программу, которая на вход принимает 
 // позиции элемента в двумерном массиве, и возвращает
 // значение этого элемента или же указание, что такого элемента нет
 
+/*
 int[,]  CreateMyArray(int rows, int columns, int minValue, int maxValue)
 {
    int[,] array = new int[rows, columns];
@@ -109,4 +110,75 @@ int[,] myArray = CreateMyArray  (rows, columns, minValue, maxValue);
 PrintArray(myArray);
 
 PrintElementIndex(myArray);
+*/
+
+// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+int[,]  CreateNewMyArray(int rows, int columns, int minValue, int maxValue)
+{
+   int[,] array = new int[rows, columns];
+
+   for (int i = 0; i < rows; i++)
+   {
+        for (int j = 0; j < columns; j++)
+        {
+            array[i,j] = new Random().Next(minValue, maxValue +1);
+        }
+   }        
+        return array;
+
+}     
+
+void PrintArray (int[,] array)
+
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write (array[i,j] + " ");
+        }
+        Console.WriteLine ();
+    }
+}
+
+double[] ArithmeticMeanColumns(int[,] array, int columns, int rows)
+{
+        double[] columnMeans = new double[columns];
+
+    for (int j = 0; j < columns; j++)
+    {
+        double sum = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            sum += array[i, j];
+        }
+        double columnMean = sum / rows;
+        columnMeans[j] = columnMean;
+
+        Console.WriteLine(" Сумма столбца " + (j + 1) + " = " + sum);
+        Console.WriteLine(" Среднее арифметическое столбца " + (j + 1) + " = " + columnMean);
+    }
+
+    return columnMeans;
+}
+
+Console.WriteLine ("Input a number of rows: ");
+int rows = Convert.ToInt32 (Console.ReadLine());
+
+Console.WriteLine ("Input a number of columns: ");
+int columns = Convert.ToInt32 (Console.ReadLine());
+
+Console.WriteLine ("Input a number of minValue: ");
+int minValue = Convert.ToInt32 (Console.ReadLine());
+
+Console.WriteLine ("Input a number of maxValue: ");
+int maxValue = Convert.ToInt32 (Console.ReadLine());
+
+
+int[,] myArray = CreateNewMyArray  (rows, columns, minValue, maxValue);
+PrintArray(myArray);
+
+ArithmeticMeanColumns(myArray, columns, rows);
+
 
